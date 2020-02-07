@@ -12,7 +12,7 @@ Created on Thu Feb  6 16:40:01 2020
 ######################################################################
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
+import time, random
 
 class InstagramBot:
     def __init__(self, username, password):
@@ -35,20 +35,21 @@ class InstagramBot:
         time.sleep(3)
         
     def like_insta(self, hashtag):
-        #count = 0 
         bot = self.bot
         bot.get('https://www.instagram.com/explore/tags/'+hashtag+'/')
-        bot.find_element_by_class_name("eLAPa").click()
-        for i in range(1,5):
-            #bot.find_element_by_class_name('_8-yf5 ').click()
+        #bot.find_element_by_class_name("eLAPa").click()
+        bot.find_element_by_class_name("_9AhH0").click()
+        time.sleep(1)
+        for i in range(1, 1000):
+            time.sleep(2)
             bot.find_element_by_class_name("wpO6b ").click()
-            bot.find_element_by_class_name("coreSpriteRightPaginationArrow").click()
             time.sleep(3)
-        #bot.find_element_by_class_name("_8-yf5 ").click()
-        #time.sleep(5)
-        #bot.find_element_by_class_name("glyphsSpriteSettings__outline__24__grey_9 u-__7").click()
+            bot.find_element_by_class_name("coreSpriteRightPaginationArrow").click()
+            t = random.randint(60,180)
+            print("Will sleep for: " + str(t))
+            time.sleep(t)
         bot.close()
         
-ed = InstagramBot('journeyofacamera', 'Yamunawest_05')
+ed = InstagramBot('coca_cola_t', 'cocacoal')
 ed.login()
 ed.like_insta('nature')
