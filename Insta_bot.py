@@ -2,7 +2,7 @@
 """
 Created on Thu Feb  6 16:40:01 2020
 
-@author: utkar
+@author: Utkarsh Singh
 """
 ######################################################################
 #you need selenium in your environment to run this.                  # 
